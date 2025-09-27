@@ -128,30 +128,6 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* App Preview Mockup */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, y: 100 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden lg:block"
-      >
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-          <div className="bg-white rounded-lg p-4 shadow-2xl">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-            </div>
-            <div className="space-y-3">
-              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-              <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-              <div className="h-20 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-lg flex items-center justify-center">
-                <BookOpen className="h-8 w-8 text-primary-500" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 };

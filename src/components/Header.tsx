@@ -39,8 +39,12 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
-            <BookOpen className="h-8 w-8 text-primary-500" />
-            <span className="text-2xl font-bold font-display text-gray-900">
+            <BookOpen className={`h-8 w-8 transition-colors duration-300 ${
+              isScrolled ? 'text-primary-500' : 'text-white'
+            }`} />
+            <span className={`text-2xl font-bold font-display transition-colors duration-300 ${
+              isScrolled ? 'text-gray-900' : 'text-white'
+            }`}>
               StoryMaker AI
             </span>
           </motion.div>
@@ -52,7 +56,11 @@ const Header: React.FC = () => {
                 key={item.name}
                 href={item.href}
                 whileHover={{ scale: 1.05 }}
-                className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200"
+                className={`font-medium transition-colors duration-300 ${
+                  isScrolled 
+                    ? 'text-gray-700 hover:text-primary-500' 
+                    : 'text-white/90 hover:text-white'
+                }`}
               >
                 {item.name}
               </motion.a>
@@ -64,14 +72,22 @@ const Header: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200"
+              className={`font-medium transition-colors duration-300 ${
+                isScrolled 
+                  ? 'text-gray-700 hover:text-primary-500' 
+                  : 'text-white/90 hover:text-white'
+              }`}
             >
               Login
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary"
+              className={`transition-all duration-300 ${
+                isScrolled 
+                  ? 'btn-primary' 
+                  : 'border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-3 px-8 rounded-full'
+              }`}
             >
               Get Started
             </motion.button>
@@ -81,12 +97,20 @@ const Header: React.FC = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
+              isScrolled 
+                ? 'hover:bg-gray-100' 
+                : 'hover:bg-white/10'
+            }`}
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-gray-700" />
+              <X className={`h-6 w-6 transition-colors duration-300 ${
+                isScrolled ? 'text-gray-700' : 'text-white'
+              }`} />
             ) : (
-              <Menu className="h-6 w-6 text-gray-700" />
+              <Menu className={`h-6 w-6 transition-colors duration-300 ${
+                isScrolled ? 'text-gray-700' : 'text-white'
+              }`} />
             )}
           </motion.button>
         </div>
