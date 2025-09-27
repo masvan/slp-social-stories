@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/slp-social-stories/static/css/main.6b0fc4ff.css",
+    "main.js": "/slp-social-stories/static/js/main.02d9e378.js",
+    "static/js/453.0637bc3b.chunk.js": "/slp-social-stories/static/js/453.0637bc3b.chunk.js",
+    "index.html": "/slp-social-stories/index.html",
+    "main.6b0fc4ff.css.map": "/slp-social-stories/static/css/main.6b0fc4ff.css.map",
+    "main.02d9e378.js.map": "/slp-social-stories/static/js/main.02d9e378.js.map",
+    "453.0637bc3b.chunk.js.map": "/slp-social-stories/static/js/453.0637bc3b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b0fc4ff.css",
+    "static/js/main.02d9e378.js"
+  ]
+}
