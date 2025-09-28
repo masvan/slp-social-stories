@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/slp-social-stories/static/css/main.e4502380.css",
-    "main.js": "/slp-social-stories/static/js/main.e09d9e85.js",
+    "main.js": "/slp-social-stories/static/js/main.20f2e30f.js",
     "static/js/453.0637bc3b.chunk.js": "/slp-social-stories/static/js/453.0637bc3b.chunk.js",
     "index.html": "/slp-social-stories/index.html",
     "main.e4502380.css.map": "/slp-social-stories/static/css/main.e4502380.css.map",
-    "main.e09d9e85.js.map": "/slp-social-stories/static/js/main.e09d9e85.js.map",
+    "main.20f2e30f.js.map": "/slp-social-stories/static/js/main.20f2e30f.js.map",
     "453.0637bc3b.chunk.js.map": "/slp-social-stories/static/js/453.0637bc3b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e4502380.css",
-    "static/js/main.e09d9e85.js"
+    "static/js/main.20f2e30f.js"
   ]
 }
