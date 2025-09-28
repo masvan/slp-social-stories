@@ -148,7 +148,7 @@ const HowItWorks: React.FC = () => {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 {/* Content */}
-                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className="space-y-6 lg:order-1">
                   <div className="flex items-center space-x-4">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center shadow-lg`}>
                       <step.icon className="h-8 w-8 text-white" />
@@ -185,7 +185,7 @@ const HowItWorks: React.FC = () => {
                 </div>
 
                 {/* Mockup */}
-                <div className={`flex justify-center ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="flex justify-center lg:order-2">
                   <motion.div
                     whileHover={{ scale: 1.05, rotateY: 5 }}
                     transition={{ duration: 0.3 }}
