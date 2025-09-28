@@ -74,26 +74,6 @@ const Pricing: React.FC = () => {
     }
   ];
 
-  const addOns = [
-    {
-      name: "Training Package",
-      price: "$199",
-      description: "2-hour training session for your team",
-      features: ["Live training", "Best practices", "Q&A session"]
-    },
-    {
-      name: "Custom Templates",
-      price: "$99",
-      description: "Bespoke story templates for your needs",
-      features: ["Custom design", "Brand integration", "Unlimited use"]
-    },
-    {
-      name: "Priority Support",
-      price: "$49",
-      description: "24/7 priority support and faster response",
-      features: ["24/7 availability", "Phone support", "1-hour response"]
-    }
-  ];
 
   return (
     <section id="pricing" className="py-20 bg-white">
@@ -192,53 +172,6 @@ const Pricing: React.FC = () => {
           ))}
         </div>
 
-        {/* Add-ons Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Add-on Services
-            </h3>
-            <p className="text-gray-600">
-              Enhance your experience with these optional services
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {addOns.map((addon, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="bg-gray-50 rounded-2xl p-6 border border-gray-200"
-              >
-                <div className="text-center">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                    {addon.name}
-                  </h4>
-                  <div className="text-2xl font-bold text-primary-500 mb-2">
-                    {addon.price}
-                  </div>
-                  <p className="text-gray-600 mb-4">
-                    {addon.description}
-                  </p>
-                  <div className="space-y-2">
-                    {addon.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-700">
-                        <Check className="h-4 w-4 text-green-500" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* FAQ Section */}
         <motion.div

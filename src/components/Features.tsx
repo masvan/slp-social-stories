@@ -178,62 +178,107 @@ const Features: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="mt-20"
         >
-          {/* Before */}
-          <div className="bg-red-50 rounded-2xl p-8 border-2 border-red-200">
-            <h4 className="text-2xl font-bold text-red-600 mb-6 flex items-center">
-              <span className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                ×
-              </span>
-              Before StoryMaker AI
-            </h4>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Generic stories that don't connect with students
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Hours spent creating custom content manually
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                High costs for individual story purchases
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-red-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Limited engagement and student interest
-              </li>
-            </ul>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold font-display text-gray-900 mb-4">
+              The StoryMaker AI Difference
+            </h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how we transform the way you create social stories
+            </p>
           </div>
 
-          {/* After */}
-          <div className="bg-green-50 rounded-2xl p-8 border-2 border-green-200">
-            <h4 className="text-2xl font-bold text-green-600 mb-6 flex items-center">
-              <span className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                ✓
-              </span>
-              With StoryMaker AI
-            </h4>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Personalized stories that students love and remember
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Create professional stories in minutes, not hours
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Unlimited stories for one low monthly price
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Higher engagement and better learning outcomes
-              </li>
-            </ul>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Before */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="card p-8 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-100 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl">😔</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-red-500 mb-1">Before</div>
+                    <h4 className="text-2xl font-bold text-gray-900">Generic Stories</h4>
+                  </div>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-red-500 text-sm">×</span>
+                    </div>
+                    <span className="text-gray-700">Generic stories that don't connect with students</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-red-500 text-sm">×</span>
+                    </div>
+                    <span className="text-gray-700">Hours spent creating custom content manually</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-red-500 text-sm">×</span>
+                    </div>
+                    <span className="text-gray-700">High costs for individual story purchases</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-red-500 text-sm">×</span>
+                    </div>
+                    <span className="text-gray-700">Limited engagement and student interest</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* After */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="card p-8 relative overflow-hidden bg-gradient-to-br from-primary-50 to-secondary-50"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl">✨</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-primary-500 mb-1">With StoryMaker AI</div>
+                    <h4 className="text-2xl font-bold text-gray-900">Personalized Stories</h4>
+                  </div>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-500 text-sm">✓</span>
+                    </div>
+                    <span className="text-gray-700">Personalized stories that students love and remember</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-500 text-sm">✓</span>
+                    </div>
+                    <span className="text-gray-700">Create professional stories in minutes, not hours</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-500 text-sm">✓</span>
+                    </div>
+                    <span className="text-gray-700">Unlimited stories for one low monthly price</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-500 text-sm">✓</span>
+                    </div>
+                    <span className="text-gray-700">Higher engagement and better learning outcomes</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

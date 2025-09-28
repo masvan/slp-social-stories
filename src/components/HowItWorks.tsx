@@ -131,7 +131,7 @@ const HowItWorks: React.FC = () => {
         </motion.div>
 
         {/* Steps */}
-        <div className="space-y-20">
+        <div className="space-y-24">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -139,64 +139,69 @@ const HowItWorks: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`flex flex-col lg:flex-row items-center gap-12 ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className="relative"
             >
-              {/* Content */}
-              <div className="flex-1 space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center`}>
-                    <step.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-gray-500 mb-1">
-                      Step {step.number}
+              {/* Step Separator */}
+              {index > 0 && (
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-px h-24 bg-gradient-to-b from-gray-200 to-transparent"></div>
+              )}
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                {/* Content */}
+                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <div className="flex items-center space-x-4">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center shadow-lg`}>
+                      <step.icon className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-gray-900">
-                      {step.title}
-                    </h3>
+                    <div>
+                      <div className="text-sm font-medium text-gray-500 mb-1">
+                        Step {step.number}
+                      </div>
+                      <h3 className="text-3xl font-bold text-gray-900">
+                        {step.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
+
+                  <div className="space-y-3">
+                    {step.details.map((detail, detailIndex) => (
+                      <motion.div
+                        key={detailIndex}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: detailIndex * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-center space-x-3"
+                      >
+                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700">{detail}</span>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
 
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  {step.description}
-                </p>
-
-                <div className="space-y-3">
-                  {step.details.map((detail, detailIndex) => (
-                    <motion.div
-                      key={detailIndex}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: detailIndex * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-center space-x-3"
-                    >
-                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700">{detail}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mockup */}
-              <div className="flex-1 flex justify-center">
-                <motion.div
-                  whileHover={{ scale: 1.05, rotateY: 5 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative"
-                >
-                  {step.mockup}
-                  {/* Floating elements */}
+                {/* Mockup */}
+                <div className={`flex justify-center ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
                   <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
+                    whileHover={{ scale: 1.05, rotateY: 5 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative max-w-md w-full"
                   >
-                    <ArrowRight className="h-4 w-4 text-primary-500" />
+                    {step.mockup}
+                    {/* Floating elements */}
+                    <motion.div
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center"
+                    >
+                      <ArrowRight className="h-4 w-4 text-primary-500" />
+                    </motion.div>
                   </motion.div>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           ))}
